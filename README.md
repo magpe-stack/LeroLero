@@ -1,6 +1,3 @@
-Aqui está o arquivo **`README.md`** completo e atualizado, contendo todas as instruções, desde o uso básico até a publicação no GitHub Pages e o passo a passo completo de instalação como aplicativo (PWA) no celular e no computador:
-
-```markdown
 # LeroLero 🤌
 
 O **LeroLero** é um gerador minimalista e ultra-rápido de texto *Lorem Ipsum*, projetado em preto e branco com suporte completo a Progressive Web App (PWA) e funcionamento **100% offline**.
