@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeroLero - Gerador Lorem Ipsum</title>
+  
+  <!-- PWA & Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Gerador de texto Lorem Ipsum offline e minimalista.">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="app-header">
+    <div class="logo-container">
+      <img src="logo.svg" alt="Logo LeroLero" class="logo-img">
+      <h1 class="app-title">LeroLero</h1>
+    </div>
+
+    <!-- Alternar Tema Claro/Escuro -->
+    <button id="theme-toggle" class="btn-icon" aria-label="Alternar Modo Claro/Escuro" title="Alternar Modo Claro/Escuro">
+      <span class="icon-theme">🌓</span>
+    </button>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="app-main">
+    
+    <!-- Painel de Controles -->
+    <section class="controls-bar">
+      <!-- Botão Gerar (Mãozinha Estalando) -->
+      <button id="btn-generate" class="btn-action" title="Gerar Texto">
+        <span class="hand-icon">🤌</span>
+        <span class="btn-label">Gerar</span>
+      </button>
+
+      <!-- Botão Ajustar (Mãozinha Pinça) -->
+      <button id="btn-settings" class="btn-action" title="Ajustar Parâmetros">
+        <span class="hand-icon">🤏</span>
+        <span class="btn-label">Ajustar</span>
+      </button>
+
+      <!-- Botão Copiar (Mãozinha Aberta) -->
+      <button id="btn-copy" class="btn-action" title="Copiar Texto">
+        <span class="hand-icon">🖐️</span>
+        <span class="btn-label">Copiar</span>
+      </button>
+    </section>
+
+    <!-- Painel Expansível de Configurações -->
+    <section id="settings-panel" class="settings-panel hidden" aria-hidden="true">
+      <div class="setting-group">
+        <label for="num-paragraphs">Parágrafos:</label>
+        <div class="number-input-wrapper">
+          <button type="button" class="btn-step" data-target="num-paragraphs" data-step="-1">-</button>
+          <input type="number" id="num-paragraphs" value="3" min="1" max="20">
+          <button type="button" class="btn-step" data-target="num-paragraphs" data-step="1">+</button>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label for="num-words">Palavras por parágrafo:</label>
+        <div class="number-input-wrapper">
+          <button type="button" class="btn-step" data-target="num-words" data-step="-5">-</button>
+          <input type="number" id="num-words" value="45" min="5" max="200" step="5">
+          <button type="button" class="btn-step" data-target="num-words" data-step="5">+</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notificação Flutuante (Toast) -->
+    <div id="toast" class="toast hidden" role="status" aria-live="polite">
+      Texto copiado para a área de transferência!
+    </div>
+
+    <!-- Área de Exibição do Texto -->
+    <section class="output-container">
+      <div id="text-output" class="text-output" contenteditable="false" placeholder="Clique em 'Gerar' para criar um texto..."></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
